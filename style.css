@@ -1,0 +1,131 @@
+*{
+  
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+
+/* #000000: fondo general de secciones y navbar.
+
+#FFFFFF: texto principal, títulos.
+
+#CCCCCC: texto secundario, fechas, categorías.
+
+#A2CFF0: enlaces, íconos de redes, bordes activos.
+
+#F4AAB9: botones hover o destacados suaves.
+
+#B8E3D8: etiquetas o chips decorativos.
+
+#CDB4F8: divisores, líneas, o decoración de tarjetas. */
+
+
+/* MENU */
+body {
+    margin: 0 !important;
+    background-color: #000000 !important;
+    color: #ffffff !important;
+  }
+  
+  .page-section {
+    height: 100vh;
+    min-height: 100vh;
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+    overflow-y: auto;
+  }
+  
+  .menu-sensor {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 3rem;
+    height: 100%;
+    z-index: 999;
+  }
+  
+  .side-menu {
+    position: fixed;
+    top: 0;
+    right: -22rem;
+    width: 12rem;
+    height: 100%;
+    color: white;
+    text-shadow: 
+    -1px -1px 3px black,
+     1px -1px 3px black,
+    -1px  1px 3px black,
+     1px  1px 3px black;
+    padding: 2rem 2rem;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+
+  }
+  
+  .side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .side-menu li {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    font-size: large;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .li-about, .li-projects, .li-contact{
+    margin-left: -1rem;
+  }
+  
+  .side-menu li:hover {
+    color: #18a1fc;
+    transform: scale(1.03);
+    transition: all 0.2s ease;
+  }
+  
+  .side-menu .li-about:hover {
+    color: #F1713F;
+  }
+
+  .side-menu .li-contact:hover {
+    color: #dadd0e;
+  }
+
+  .side-menu.visible {
+    right: 0;
+  }
+  
+  
+
+  .menu-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1001;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none; /* por defecto oculto */
+  }
+  
+  /* Mostrar solo en pantallas pequeñas */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .menu-sensor {
+      display: none; /* no tiene sentido en móviles */
+    }
+  }
+  
